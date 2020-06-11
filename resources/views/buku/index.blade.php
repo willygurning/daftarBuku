@@ -43,6 +43,7 @@
                         <th scope="col">Jenis</th>
                         <th scope="col">Jumlah</th>
                         <th scope="col">Keterangan</th>
+                        <th scope="col">Categorie</th>
                         <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -56,6 +57,7 @@
                         <td>{{$bk->jenis}}</td>
                         <td>{{$bk->jumlah}}</td>
                         <td>{{$bk->keterangan}}</td>
+                   
                         <td>
                             <a href="/buku/{{$bk->id}}/edit" class="badge badge-success">edit</a> 
                             <a href="/buku/delete/{{$bk->id}}" class="badge badge-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>  
@@ -64,7 +66,7 @@
                         </tr>
                       @endforeach
 
-                     
+                       
        
                     </tbody>
                 </table>

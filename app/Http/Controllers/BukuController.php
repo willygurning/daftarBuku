@@ -109,7 +109,9 @@ class BukuController extends Controller
             'jumlah' => $request->jumlah,
             'keterangan' => $request->keterangan
         ]);
-            // Book::where('id',$buku->id)
+      
+            return redirect('/buku')->with('status','Data berhasil diupdate');
+                  // Book::where('id',$buku->id)
             // ->update([
             //     'judul' => $request->judul,
             //     'jenis' => $request->jenis,
@@ -117,7 +119,6 @@ class BukuController extends Controller
             //     'keterangan' => $request->keterangan,
                 
             // ]);
-            return redirect('/buku')->with('status','Data berhasil diupdate');
     }
 
     /**
