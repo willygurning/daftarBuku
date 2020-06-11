@@ -59,6 +59,8 @@ class BukuController extends Controller
             'jenis' => $request->jenis,
             'jumlah' => $request->jumlah,
             'keterangan' => $request->keterangan,
+            'kategori' => $request->kategori,
+            
         ]);
 
         // Book::create($request->all());
@@ -107,7 +109,9 @@ class BukuController extends Controller
             'judul' => $request->judul,
             'jenis' => $request->jenis,
             'jumlah' => $request->jumlah,
-            'keterangan' => $request->keterangan
+            'keterangan' => $request->keterangan,
+            'kategori' => $request->kategori,
+            
         ]);
       
             return redirect('/buku')->with('status','Data berhasil diupdate');
