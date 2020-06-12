@@ -8,7 +8,7 @@ class Book extends Model
 {
     protected $fillable = ['judul','jenis','jumlah','keterangan','kategori'];
 
-    // public function categories(){
-    //     return $this->hasMany('App\categorie');
-    // }
+    public function categories(){
+        return $this->hasMany('App\categorie');
+    }
 }

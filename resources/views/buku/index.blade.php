@@ -45,6 +45,7 @@
                         <th scope="col">Keterangan</th>
                         <th scope="col">Kategori</th>
                         <th scope="col">Aksi</th>
+                        <th scope="col">Category</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,6 +64,11 @@
                             <a href="/buku/{{$bk->id}}/edit" class="badge badge-success">edit</a> 
                             <a href="/buku/delete/{{$bk->id}}" class="badge badge-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">delete</a>  
                           
+                        </td>
+                        <td>
+                        @foreach($bk->categories as $t )
+                            {{$t->category_name}}
+                        @endforeach
                         </td>
                         </tr>
                       @endforeach

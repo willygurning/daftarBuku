@@ -14,7 +14,7 @@ class AddKategoriOnBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            $table->string('kategori',50);
+            $table->string('kategori');
         });
     }
 
@@ -25,8 +25,6 @@ class AddKategoriOnBooksTable extends Migration
      */
     public function down()
     {
-        // Schema::table('books', function (Blueprint $table) {
-        //     $table->dropColumn('kategori');
-        // });
+        //
     }
 }

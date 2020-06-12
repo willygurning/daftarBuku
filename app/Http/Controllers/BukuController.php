@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use App\book;
+use App\categorie;
+
 class BukuController extends Controller
 {
     /**
@@ -29,8 +31,13 @@ class BukuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
+       
+
     {
-        return view('buku.create'); 
+        $categories = categorie ::all();
+        
+        return view('buku.create',compact('categories')); 
     }
 
     /**
@@ -49,6 +56,8 @@ class BukuController extends Controller
 
         // $book->save();
 
+        $categories = categorie ::all();
+
         $request->validate([
             'judul' => 'required',
             'jumlah' => 'required'
@@ -62,11 +71,15 @@ class BukuController extends Controller
             'kategori' => $request->kategori,
             
         ]);
+        // categorie::create([
+        //     'category_name' => $request->kategori,
+        //     'book_id' => $request->id,
+        // ]);
 
         // Book::create($request->all());
 
         return redirect('/buku')->with('status','Data berhasil ditambahkan');
-         
+        // ,compact('categories')
     }
 
     /**
@@ -89,8 +102,9 @@ class BukuController extends Controller
     // public function edit(Book $buku)
     public function edit($id)
     {
+        $categories = categorie ::all();
         $buku = Book::find($id);
-        return view('buku.edit',compact('buku'));
+        return view('buku.edit',compact('buku'),compact('categories'));
     }
 
     /**

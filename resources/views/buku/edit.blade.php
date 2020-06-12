@@ -61,8 +61,10 @@
             
                     <label for="kategori">kategori</label>
                     <select id="kategori" name="kategori">
-                        <option value="matematika">Matematika</option>
-                        <option value="biologi">Biologi</option>
+                        @foreach( $categories as $category)
+                        <option value="{{ $category->category_name}}">{{ $category->category_name}}</option>
+                        <!-- <option value="biologi">Biologi</option> -->
+                        @endforeach
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Edit Buku</button>

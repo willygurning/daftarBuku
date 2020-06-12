@@ -55,13 +55,16 @@
                     <input type="text" class="form-control" id="keterangan" placeholder="masukkan keterangan buku" name="keterangan">
                 </div>
                 <div class="form-group">
-                <label for="kategori">kategori</label>
+                <!-- <label for="kategori">kategori</label> -->
                     <!-- <input type="text" class="form-control" id="kategori" placeholder="masukkan keterangan buku" name="kategori"> -->
             
                     <label for="kategori">kategori</label>
                     <select id="kategori" name="kategori">
-                        <option value="matematika">Matematika</option>
-                        <option value="biologi">Biologi</option>
+                        @foreach( $categories as $category)
+                        <option value="{{ $category->category_name}}">{{ $category->category_name}}</option>
+                        <!-- {{ $category->id}} -->
+                        <!-- <option value="biologi">Biologi</option> -->
+                        @endforeach
                     </select>
                 </div>
               
